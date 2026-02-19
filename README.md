@@ -161,5 +161,5 @@ Repository ini berisi:
 
 <p align="center">
   <strong>Mantra Digital Indonesia</strong><br>
-  <em>One Door to Transparency. Trusted Digital Ecosystem.</em>
+  <em>One Digital Ecosystem Trusted</em>
 </p>
