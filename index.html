@@ -5,207 +5,326 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mantra Digital Indonesia | Trusted Digital Ecosystem</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --primary:#0f172a;
-      --secondary:#1e293b;
-      --accent:#38bdf8;
-      --gold:#facc15;
-      --text:#e5e7eb;
-      --muted:#94a3b8;
+    :root {
+      --primary: #020617;
+      --accent: #38bdf8;
+      --accent-2: #818cf8; /* Tambahan warna ungu kebiruan untuk gradasi */
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
-    body{
-      background:linear-gradient(180deg,#020617,#020617);
-      color:var(--text);
-      line-height:1.7;
+    html {
+      scroll-behavior: smooth;
     }
 
-    a{color:inherit;text-decoration:none}
+    body {
+      background-color: var(--primary);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* Latar Belakang Animasi (Glowing Orbs) */
+    .bg-animation {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.4;
+      animation: float 15s infinite alternate ease-in-out;
+    }
+
+    .orb-1 {
+      width: 50vw; height: 50vw;
+      background: var(--accent);
+      top: -20%; left: -10%;
+    }
+
+    .orb-2 {
+      width: 40vw; height: 40vw;
+      background: var(--accent-2);
+      bottom: -10%; right: -10%;
+      animation-duration: 20s;
+      animation-direction: alternate-reverse;
+    }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(50px, 50px) scale(1.1); }
+    }
 
     /* NAVBAR */
-    header{
-      position:fixed;
-      top:0; left:0;
-      width:100%;
-      z-index:100;
-      background:rgba(2,6,23,.8);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,.05);
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(2, 6, 23, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+      transition: all 0.3s ease;
     }
 
-    .nav{
-      max-width:1200px;
-      margin:auto;
-      padding:18px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .brand{
-      font-size:1.2rem;
-      font-weight:700;
-      letter-spacing:.5px;
+    .brand {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(to right, #fff, var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .nav a{
-      margin-left:24px;
-      font-size:.9rem;
-      color:var(--muted);
+    .nav a {
+      margin-left: 30px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.3s ease;
     }
 
-    .nav a:hover{color:var(--accent)}
+    .nav a:hover { color: var(--text); }
 
     /* HERO */
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:120px 20px 80px;
-      background:
-        radial-gradient(circle at top,rgba(56,189,248,.15),transparent 40%),
-        linear-gradient(180deg,#020617,#020617);
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 20px 80px;
+      position: relative;
     }
 
-    .hero h1{
-      font-size:clamp(2.2rem,4vw,3.5rem);
-      font-weight:700;
+    .hero-content {
+      animation: fadeUp 1s ease-out forwards;
     }
 
-    .hero span{
-      color:var(--accent);
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .hero p{
-      max-width:720px;
-      margin:20px auto 40px;
-      color:var(--muted);
-      font-size:1.05rem;
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -1px;
     }
 
-    .cta{
-      display:inline-flex;
-      gap:16px;
-      flex-wrap:wrap;
-      justify-content:center;
+    .hero span {
+      background: linear-gradient(to right, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
     }
 
-    .btn{
-      padding:14px 28px;
-      border-radius:50px;
-      font-size:.95rem;
-      font-weight:500;
-      transition:.3s;
+    .hero p {
+      max-width: 750px;
+      margin: 24px auto 40px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.15rem);
     }
 
-    .btn.primary{
-      background:var(--accent);
-      color:#020617;
+    .cta {
+      display: inline-flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .btn.primary:hover{opacity:.9}
-
-    .btn.outline{
-      border:1px solid rgba(255,255,255,.2);
-      color:var(--text);
+    .btn {
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
-    .btn.outline:hover{
-      border-color:var(--accent);
-      color:var(--accent);
+    .btn.primary {
+      background: linear-gradient(45deg, var(--accent), #0ea5e9);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+      border: none;
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(56, 189, 248, 0.5);
+    }
+
+    .btn.outline {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      color: var(--text);
+    }
+
+    .btn.outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent);
+      transform: translateY(-3px);
     }
 
     /* SECTION */
-    section{
-      max-width:1200px;
-      margin:auto;
-      padding:80px 20px;
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 24px;
+      position: relative;
+      z-index: 10;
     }
 
-    .section-title{
-      text-align:center;
-      margin-bottom:60px;
+    .section-title {
+      text-align: center;
+      margin-bottom: 70px;
     }
 
-    .section-title h2{
-      font-size:2rem;
-      margin-bottom:10px;
+    .section-title h2 {
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      margin-bottom: 15px;
+      font-weight: 700;
     }
 
-    .section-title p{
-      color:var(--muted);
-      max-width:700px;
-      margin:auto;
+    .section-title p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.05rem;
     }
 
-    /* GRID */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
+    /* GRID & CARDS (Glassmorphism) */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
-    .card{
-      background:linear-gradient(180deg,#020617,#020617);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:20px;
-      padding:30px;
-      transition:.3s;
+    .card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 40px 30px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
     }
 
-    .card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(56,189,248,.4);
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
-    .card h3{
-      margin-bottom:10px;
-      font-size:1.1rem;
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
-    .card p{
-      color:var(--muted);
-      font-size:.95rem;
+    .card:hover::before { opacity: 1; }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    /* SECURITY */
-    .security{
-      background:linear-gradient(180deg,#020617,#020617);
-      border-top:1px solid rgba(255,255,255,.05);
-      border-bottom:1px solid rgba(255,255,255,.05);
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* CONTACT SECTION SPECIFIC */
+    #contact .card {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(56,189,248,0.05), transparent);
+      border-color: rgba(56, 189, 248, 0.2);
     }
 
     /* FOOTER */
-    footer{
-      text-align:center;
-      padding:40px 20px;
-      color:var(--muted);
-      font-size:.9rem;
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--glass-border);
+      background: rgba(2, 6, 23, 0.8);
+      backdrop-filter: blur(10px);
     }
 
-    @media(max-width:768px){
-      .nav a{display:none}
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav a { display: none; } /* Navigasi disembunyikan di HP untuk simplicity */
+      section { padding: 60px 20px; }
+      .card { padding: 30px 20px; }
     }
   </style>
 </head>
 <body>
 
+<div class="bg-animation">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+</div>
+
 <header>
   <div class="nav">
-    <div class="brand">Mantra Digital Indonesia</div>
+    <div class="brand">Mantra Digital.</div>
     <nav>
       <a href="#about">Tentang</a>
       <a href="#services">Solusi</a>
@@ -215,9 +334,8 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <div>
+  <div class="hero-content">
     <h1>Ekosistem Digital <span>Satu Pintu</span><br/>Menuju Transparansi</h1>
     <p>
       Mantra Digital Indonesia membangun website desa dan sistem digital
@@ -225,100 +343,104 @@
       hingga skala global.
     </p>
     <div class="cta">
-      <a href="#contact" class="btn primary">Kerja Sama Instansi</a>
+      <a href="#contact" class="btn primary">Kerja Sama Instansi 🚀</a>
       <a href="#services" class="btn outline">Lihat Solusi</a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="section-title">
     <h2>Tentang Kami</h2>
-    <p>
-      Kami adalah partner transformasi digital yang menjembatani teknologi
-      dengan kebutuhan nyata instansi pemerintah dan organisasi.
-    </p>
+    <p>Kami adalah partner transformasi digital yang menjembatani teknologi dengan kebutuhan nyata instansi pemerintah dan organisasi.</p>
   </div>
 
   <div class="grid">
     <div class="card">
+      <div class="card-icon">📊</div>
       <h3>Transparansi Data</h3>
-      <p>Dashboard realtime untuk pemantauan data oleh desa, kecamatan, hingga kabupaten.</p>
+      <p>Dashboard realtime untuk pemantauan data oleh desa, kecamatan, hingga kabupaten dengan akurasi tinggi.</p>
     </div>
     <div class="card">
+      <div class="card-icon">🔗</div>
       <h3>Ekosistem Terintegrasi</h3>
-      <p>Satu platform, banyak layanan, semua terhubung dan terkelola.</p>
+      <p>Satu platform multi-tenant, banyak layanan, semua terhubung dan terkelola secara terpusat.</p>
     </div>
     <div class="card">
+      <div class="card-icon">📈</div>
       <h3>Skalabilitas Nasional</h3>
-      <p>Sistem siap digunakan lintas wilayah dan berkembang ke skala global.</p>
+      <p>Arsitektur sistem web yang siap digunakan lintas wilayah dan mampu berkembang ke skala enterprise.</p>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="section-title">
     <h2>Solusi Unggulan</h2>
-    <p>Dirancang khusus untuk instansi pemerintah dan organisasi.</p>
+    <p>Dirancang khusus untuk memodernisasi tata kelola instansi pemerintah.</p>
   </div>
 
   <div class="grid">
     <div class="card">
-      <h3>Website Desa Terintegrasi</h3>
-      <p>Layanan publik digital, statistik, dan data kependudukan realtime.</p>
+      <div class="card-icon">🌐</div>
+      <h3>Website Desa Interaktif</h3>
+      <p>Layanan publik digital mandiri, statistik transparan, dan manajemen data kependudukan realtime.</p>
     </div>
     <div class="card">
-      <h3>Dashboard Instansi</h3>
-      <p>Pantau data desa secara langsung oleh Camat, Bupati, dan Kepala Desa.</p>
+      <div class="card-icon">🖥️</div>
+      <h3>Dashboard Eksekutif</h3>
+      <p>Pantau rekapitulasi data desa secara langsung dan akurat oleh Camat, Bupati, dan Kepala Desa.</p>
     </div>
     <div class="card">
-      <h3>Sistem Skala Global</h3>
-      <p>Aplikasi web & sistem data fleksibel sesuai kebutuhan organisasi.</p>
+      <div class="card-icon">⚙️</div>
+      <h3>Integrasi Sistem Global</h3>
+      <p>Sinkronisasi API dengan database pemerintah (seperti Siskeudes) untuk efisiensi birokrasi.</p>
     </div>
   </div>
 </section>
 
-<!-- SECURITY -->
-<section id="security" class="security">
+<section id="security">
   <div class="section-title">
     <h2>Keamanan & Infrastruktur</h2>
-    <p>Kepercayaan adalah fondasi utama kami.</p>
+    <p>Kepercayaan dan kerahasiaan data adalah fondasi utama arsitektur kami.</p>
   </div>
 
   <div class="grid">
     <div class="card">
+      <div class="card-icon">🚀</div>
       <h3>Server VPS Dedicated</h3>
-      <p>Resource server khusus, tidak tercampur dengan pengguna lain.</p>
+      <p>Resource server eksklusif berkinerja tinggi, menjamin uptime maksimal tanpa gangguan.</p>
     </div>
     <div class="card">
-      <h3>Data Aman & Terkontrol</h3>
-      <p>Akses berbasis peran, isolasi sistem, dan pengelolaan profesional.</p>
+      <div class="card-icon">🛡️</div>
+      <h3>Data Aman & Terisolasi</h3>
+      <p>Enkripsi mutakhir, akses berbasis peran (RBAC), dan pemisahan database antar entitas desa.</p>
     </div>
     <div class="card">
+      <div class="card-icon">⚡</div>
       <h3>Stabil & Cepat</h3>
-      <p>Dirancang untuk sistem pemerintahan dan data sensitif.</p>
+      <p>Dibangun dengan framework web terkini yang dirancang untuk merespon ribuan *request* secara instan.</p>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-title">
-    <h2>Kerja Sama</h2>
-    <p>Kami siap menjadi partner digital instansi pemerintah.</p>
+    <h2>Mulai Transformasi Digital</h2>
+    <p>Kami siap menjadi partner teknologi andalan untuk instansi Anda.</p>
   </div>
 
-  <div class="cta" style="justify-content:center">
-    <a href="mailto:mantradigital.id@gmail.com" class="btn primary">
-      Hubungi Kami
+  <div class="card" style="grid-column: 1 / -1;">
+    <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Mari Berkolaborasi</h3>
+    <p style="margin-bottom: 30px;">Tingkatkan efisiensi dan transparansi instansi Anda bersama ekosistem Mantra Digital. Konsultasikan kebutuhan infrastruktur Anda sekarang.</p>
+    <a href="mailto:mantradigital.id@gmail.com" class="btn primary" style="display: inline-block;">
+      Hubungi Tim Kami ✉️
     </a>
   </div>
 </section>
 
 <footer>
-  © 2026 Mantra Digital Indonesia • Trusted Digital Ecosystem
+  © 2026 Mantra Digital Indonesia • Membangun Ekosistem Digital Masa Depan
 </footer>
 
 </body>
