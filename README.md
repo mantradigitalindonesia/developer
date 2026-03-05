@@ -15,7 +15,7 @@ Kami membangun **website desa dan sistem digital terintegrasi** sebagai pintu ut
 - 🏛 Tata kelola digital yang rapi  
 - 🤝 Kepercayaan publik  
 
-Melalui Mantra Digital, website desa bukan sekadar tampilan informasi, tetapi **bagian dari ekosistem digital yang hidup, aman, dan berkelanjutan**.
+Melalui Andesbar, website desa bukan sekadar tampilan informasi, tetapi **bagian dari ekosistem digital yang hidup, aman, dan berkelanjutan**.
 
 Di sisi lain, kami juga mampu mengembangkan **website dan sistem digital berskala global**, siap digunakan lintas wilayah, lintas organisasi, dan lintas kebutuhan.
 
@@ -55,7 +55,7 @@ Semua dibangun dalam **satu ekosistem digital yang saling terhubung**.
 
 ## 🌐 Solusi Digital Skala Global
 
-Mantra Digital juga melayani:
+Andesbar juga melayani:
 - Sistem Informasi & Dashboard Global  
 - Manajemen Data Fleksibel Sesuai Kebutuhan  
 - Aplikasi Web Berbasis Database  
@@ -72,7 +72,7 @@ Siap digunakan oleh:
 
 ## ⚡ Infrastruktur Server & Hosting
 
-Untuk menjamin **kecepatan, stabilitas, dan keamanan**, seluruh sistem Mantra Digital dibangun menggunakan:
+Untuk menjamin **kecepatan, stabilitas, dan keamanan**, seluruh sistem Andesbar dibangun menggunakan:
 
 ### 🖥 Server Berbasis VPS (Virtual Private Server)
 - **Dedicated Resource (CPU, RAM, Storage)**  
