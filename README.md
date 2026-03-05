@@ -1,14 +1,14 @@
-# 🚀 Mantra Digital Indonesia
+# 🚀 Andesbar Secured Digital Ecosystem
 
 **One Digital Ecosystem. One Trusted Partner.**
 
-Mantra Digital Indonesia adalah startup teknologi yang membangun **ekosistem digital satu pintu** untuk mendorong **transparansi, efisiensi, dan kepercayaan**, dimulai dari **website desa** hingga **sistem digital berskala global**.
+Andesbar Secured Digital Ecosystem adalah startup teknologi yang membangun **ekosistem digital satu pintu** untuk mendorong **transparansi, efisiensi, dan kepercayaan**, dimulai dari **website desa** hingga **sistem digital berskala global**.
 
 Kami hadir untuk menjembatani teknologi dan kebutuhan nyata masyarakat, instansi, serta organisasi di era digital.
 
 ---
 
-## 🌍 Tentang Mantra Digital Indonesia
+## 🌍 Tentang Andesbar Secured Digital Ecosystem
 
 Kami membangun **website desa dan sistem digital terintegrasi** sebagai pintu utama menuju:
 - 📊 Transparansi data  
@@ -102,7 +102,7 @@ Kami mengedepankan:
 - Akses berbasis peran (role-based access)  
 - Praktik pengembangan yang bertanggung jawab  
 
-**Kepercayaan klien dan pelanggan adalah fondasi utama Mantra Digital Indonesia.**
+**Kepercayaan klien dan pelanggan adalah fondasi utama Andesbar Secured Digital Ecosystem.**
 
 ---
 
@@ -160,6 +160,6 @@ Repository ini berisi:
 ---
 
 <p align="center">
-  <strong>Mantra Digital Indonesia</strong><br>
+  <strong>Andesbar Secured Digital Ecosystem</strong><br>
   <em>One Digital Ecosystem Trusted</em>
 </p>
